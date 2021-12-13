@@ -4,6 +4,12 @@ const Schema = mongoose.Schema;
 const crypto =require('crypto');
 
 
+/*Graphql */
+const graphql = require('graphql');
+const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList, GraphQLSchema } = graphql;
+
+
+
 const userSchema =new  mongoose.Schema({
 
     firstName: {

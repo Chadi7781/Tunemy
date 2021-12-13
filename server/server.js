@@ -1,4 +1,10 @@
+
+
 const express = require("express");
+
+//graphql 
+const graphqlSchema = require('./model/graphq.model');
+const graphqlHTTP = require('express-graphql').graphqlHTTP;
 const morgan = require("morgan");
 
 const bodyParser = require("body-parser");
@@ -24,6 +30,15 @@ const port = process.env.PORT;
 connectDB();
 
 
+//Add Graphql endpoint to the server
+app.use(
+    '/graphql',
+    graphqlHTTP({
+        schema: graphqlSchema,
+        graphiql: true
+    })
+)
+
 app.use(express.static(path.join(__dirname, "public")));
 
 // Dev Logginf Middleware
@@ -39,6 +54,7 @@ if (process.env.NODE_ENV === "development") {
 // Load routes
 
 const authRoute = require('./routes/auth.route');
+const { schema } = require('./model/user.modal');
 
 app.enable("trust proxy");
 app.use(cors());
