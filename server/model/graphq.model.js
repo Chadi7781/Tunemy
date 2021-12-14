@@ -1,6 +1,7 @@
 
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList, GraphQLSchema } = graphql;
+const _ = require('lodash')
 
 
 const RootQuery = new GraphQLObjectType({

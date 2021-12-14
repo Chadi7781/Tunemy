@@ -3,8 +3,8 @@
 const express = require("express");
 
 //graphql 
-const graphqlSchema = require('./model/graphq.model');
-const graphqlHTTP = require('express-graphql').graphqlHTTP;
+//const graphqlSchema = require('./model/graphq.model');
+//const graphqlHTTP = require('express-graphql').graphqlHTTP;
 const morgan = require("morgan");
 
 const bodyParser = require("body-parser");
@@ -29,7 +29,7 @@ const port = process.env.PORT;
 //Connect to DB
 connectDB();
 
-
+/*
 //Add Graphql endpoint to the server
 app.use(
     '/graphql',
@@ -38,6 +38,7 @@ app.use(
         graphiql: true
     })
 )
+*/
 
 app.use(express.static(path.join(__dirname, "public")));
 
