@@ -1,5 +1,6 @@
 import App from "next/app";
 import React from "react";
+import Navbar from "./navbar/navbar";
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     const pageProps = Component.getInitialProps

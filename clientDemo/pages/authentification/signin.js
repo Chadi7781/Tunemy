@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../../styles/Home.module.css";
 import { useState } from "react";
 
 const Signin = () => {
@@ -14,16 +13,16 @@ const Signin = () => {
   };
   return (
     <>
-      <h1 className="jumbotron text-center bg-primary square">
+      {/* <h1 className="jumbotron text-center bg-primary square">
         {" "}
         <img className="help-img" src="help.png" />
         Sign in{" "}
-      </h1>
+      </h1> */}
 
-      <div className="container col-md-4 offset-md-4 pb-5">
+      <div className="max-w-md flex items-center justify-center m-auto p-4 ">
         <div className="title"></div>
         <form onSubmit={handleSubmit}>
-          <div className="content">
+          <div className="content ">
             <h1>Sign Now!</h1>
             <div className="title-signin">
               <span>
@@ -31,36 +30,36 @@ const Signin = () => {
                 professionnel
               </span>
             </div>
-            <div className="container pt-5">
-              <div className="row">
-                <div className="col-12">
-                  <div className="floating-form mb-3">
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="subject"
-                      autoComplete="off"
-                      required
-                    />
-                    <label htmlFor="subject">Email</label>
-                  </div>
-                </div>
 
-                <div className="col-12">
-                  <div className="floating-form mb-3">
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="password"
-                      autoComplete="off"
-                      required
-                    />
-                    <label htmlFor="password">Password</label>
-                  </div>
-                </div>
-              </div>
+            <div className="outline relative my-11 border-none  focus-within:border-secondColorHover">
+              <input
+                type="text"
+                name="email"
+                placeholder=" "
+                className="  w-full block p-4 text-lg   appearance-none  focus:ring-transparent bg-transparent"
+              />
+              <label
+                for="email"
+                className="absolute top-0 text-lg p-4 origin-0  -z-2  duration-300 bg-white"
+              >
+                Email
+              </label>
             </div>
-            <br />
+            <div className="outline relative my-11 border-1  focus-within:border-secondColorHover">
+              <input
+                type="password"
+                name="password"
+                placeholder=" "
+                className="w-full block p-4 text-lg appearance-none focus:ring-transparent bg-transparent"
+              />
+              <label
+                for="password"
+                className="absolute top-0 text-lg p-4 -z-2 origin-0   duration-300 bg-white"
+              >
+                Password
+              </label>
+            </div>
+
             <button type="submit" className="signin-btn">
               Submit
             </button>

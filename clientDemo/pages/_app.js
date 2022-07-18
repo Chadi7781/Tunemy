@@ -1,10 +1,6 @@
 import App from "next/app";
-import "../styles/tailwindcss.css";
 
-import "../public/css/styles.css";
 import "../styles/globals.css";
-
-import "bootstrap/dist/css/bootstrap.css";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,6 +10,7 @@ import Landingpage from "./landing-page/LandingPage";
 import Register from "./authentification/register";
 import Signin from "./authentification/signin";
 import Footer from "../components/footer/Footer";
+import Navbar from "../components/navbar/navbar";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -30,9 +27,8 @@ class MyApp extends App {
     return (
       <>
         <ToastContainer position="top-center" />
+        <Navbar />;
         <Component {...appProps} />
-        {/* <Signin /> */}
-        <Landingpage />
         <Footer />
       </>
     );

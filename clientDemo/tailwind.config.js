@@ -86,7 +86,6 @@ module.exports = {
         grayTitle: "#111827",
         yellow: "#FDD446",
         "theme-color": "#1E3A8A",
-        "border-color": "#E8E8E8",
         "body-color": "#747E88",
         "heading-color": "#162447",
         shadow: "#9D6A6A",
@@ -103,11 +102,12 @@ module.exports = {
         },
       },
 
+      transformOrigin: {
+        0: "0%",
+      },
+
       zIndex: {
-        "-10": "-10",
-        "-20": "-20",
-        "-30": "-30",
-        "-40": "-40",
+        "-1": "-1",
       },
 
       transitionDelay: {
@@ -117,7 +117,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderColor: ["responsive", "hover", "focus", "focus-within"],
+    },
   },
   plugins: [],
 };

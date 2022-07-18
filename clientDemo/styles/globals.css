@@ -16,11 +16,10 @@ body {
   font-family: 'Nunito', sans-serif;
   /* @apply text-body-color; */
 }
-*:focus, button:focus {
-  @apply outline-none shadow-none;
-  outline-offset: none;
-  outline: none;
-}
+
+@layer base {
+  
+*:focus,
 h1,
 h2,
 h3,
@@ -33,7 +32,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  @apply font-bold m-0 text-black;
+  @apply font-bold m-0 text-grayText;
 
 }
 
@@ -115,117 +114,6 @@ a, button {
 
 /* ============ navbar =========== */
 
-.navbar-area {
-  @apply fixed top-0 left-0 w-full z-20 transition-all duration-300;
-}
-.sticky {
-  @apply fixed bg-white shadow-md; 
-}
-.collapse.show {
-  @apply block;
-}
-.toggler-icon {
-  @apply relative block duration-300 bg-black;
-  height: 2px;
-  width: 30px;
-  margin: 6px 0;
-}
-.sticky .toggler-icon {
-  @apply bg-black;
-}
-.active>.toggler-icon:nth-child(1) {
-  @apply transform rotate-45;
-  top: 7px;
-}
-.active>.toggler-icon:nth-child(2) {
-  @apply opacity-0;
-}
-.active>.toggler-icon:nth-child(3) {
-  top: -8px;
-  transform: rotate(135deg);
-}
-.navbar-nav .nav-item a {
-  @apply inline-block text-base font-normal text-body-color relative z-10 py-2 lg:py-1 hover:text-theme-color;
-}
-.navbar-nav .nav-item a.active {
-  @apply text-theme-color;
-}
-
-/* =========== hero =========== */
-.header_hero {
-  height: 600px;
-}
-@media (max-width: 1400px) {
-  .header_hero {
-    height: 700px;
-  }
-}
-.hero_shape {
-  @apply absolute opacity-40 -z-10;
-}
-.shape_1 {
-  @apply top-150;
-  left: 10%;
-}
-.shape_2{
-  @apply top-150;
-  left: 30%;
-}
-.shape_3{
-  @apply top-200;
-  left: 40%;
-}
-.shape_4{
-  @apply top-120;
-  left: 50%;
-}
-.shape_5{
-  top: 40%;
-  left: 14%;
-}
-.shape_6{
-  top: 34%;
-  left: 48%;
-}
-.shape_7{
-  top: 60%;
-  left: 80px;
-}
-.shape_8{
-  top: 55%;
-  left: 38%;
-}
-.shape_9{
-  @apply bottom-25;
-  left: 13%;
-}
-.shape_10{
-  @apply bottom-200 left-1/4;
-}
-.shape_11{
-  @apply bottom-20;
-  left: 35%;
-}
-.shape_12{
-  @apply bottom-1/4;
-  left: 42%;
-}
-.header_shape {
-  @apply absolute top-0 right-0 h-full w-1/2;
-}
-.header_shape::before {
-  content: '';
-  background-color: #F5F5FC;
-  transform: skewX(-15deg);
-  width: 200%;
-  @apply absolute top-0 left-0 h-full;
-}
-.header_image {
-  @apply lg:absolute top-0 right-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0;
-}
-.header_image img {
-  @apply max-w-full lg:w-auto xl:max-w-screen-md;
-}
 
 /* =========== service =========== */
 
@@ -397,14 +285,15 @@ body {
   background-color: #fff;
   padding: 35px 30px;
   width: 100%;
-  height: 500px;
+  height: 50%;
 
-  border-radius: 5px;
+  border-radius: 1rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 768px) {
     padding: 25px 30px;
     margin-left: 0;
+    width: 100%;
     margin-bottom: 15px;
     border-radius: 25px;
 
@@ -414,43 +303,6 @@ body {
   }
 }
 
-.floating-form {
-  position: relative;
-}
-.floating-form .form-control {
-  background: transparent;
-  position: relative;
-  z-index: 50;
-}
-.floating-form .form-control:focus,
-.floating-form .form-control:active,
-.floating-form .form-control:valid {
-  outline: none !important;
-  box-shadow: none !important;
-}
-.floating-form .form-control:focus + label,
-.floating-form .form-control:active + label,
-.floating-form .form-control:valid + label {
-  transform: translateY(-40%);
-  top: -2px;
-  z-index: 100;
-  font-size: 12px;
-}
-.floating-form label {
-  position: absolute;
-  top: 50%;
-  /* bootstrap > input > padding size */
-  left: 0.75rem;
-  z-index: 1;
-  font-size: 14px;
-  transform: translateY(-50%);
-  transition: all 0.3s;
-  background: #fff;
-  color: #afafaf;
-}
-.floating-form textarea + label {
-  top: 1.275rem;
-}
 
 /*Title REgister form */
 .title {
@@ -464,6 +316,7 @@ body {
     width: 100%;
     top: 0;
     background-color:green;
+
 
     position: absolute;
     font-family: "Roboto Thin";
@@ -548,7 +401,7 @@ body {
 
 .separator {
   width: 100%;
-  border-bottom: solid 1px;
+  border-bottom: solid 1px #374151;
   position: relative;
   margin: 30px 0px;
 }
@@ -556,10 +409,12 @@ body {
 .separator::before {
   content: "OR";
   position: absolute;
-  left: 47%;
+  left: 45%;
   top: -8px;
+  color :#374151;
   background-color: #fff;
   padding: 0px 10px;
+  font-size:0.9rem;
 }
 .link-underline {
   border-bottom-width: 0;
@@ -617,7 +472,22 @@ li.check:before {
   @apply bg-orange-500 rounded-l-full rounded-r-full w-12;
 }
 
+
+.outline input:focus-within ~ label, 
+.outline input:not(:placeholder-shown)~ label {
+  @apply transform scale-75 -translate-y-4 ml-3 z-0 px-1 py-0;
+ 
+
+ }
+  .outline input:focus-within ~ label {
+  @apply text-secondColorHover
+ }
+
+
+}
 /* purgecss end ignore */
 @tailwind utilities;
 /* purgecss start ignore */
 /* purgecss end ignore */
+
+

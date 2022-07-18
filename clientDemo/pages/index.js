@@ -1,9 +1,10 @@
 import Head from "next/head";
+import Landingpage from "./landing-page/LandingPage";
 export default function Home() {
   return (
     <>
       <div>
-        <Head>
+        {/* <Head>
           <title>Test</title>
           <link rel="stylesheet" href="/assets/css/animate.css" />
           <link rel="stylesheet" href="/assets/css/animate.css" />
@@ -19,7 +20,8 @@ export default function Home() {
 
           <script src="/assets/js/tiny-slider.js" />
           <script src="/assets/js/wow.min.js" />
-        </Head>
+        </Head> */}
+        <Landingpage />
       </div>
     </>
   );

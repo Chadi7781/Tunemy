@@ -57,7 +57,7 @@ function Hero() {
             <div className="w-full lg:w-1/2">
               <div className="header_hero_content pt-150 lg:pt-0">
                 <h2 className="hero_title text-2xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-extrabold">
-                  Empower <span className="text-grayTitle">Yourself</span>
+                  We Share <span className="text-grayTitle">We Learn</span>
                 </h2>
                 <p className="mt-8 lg:mr-8 text-left text-grayContent">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
